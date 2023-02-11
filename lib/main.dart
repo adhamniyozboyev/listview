@@ -16,7 +16,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // Widget con = Text('Hello');
   TextEditingController controller = TextEditingController();
-  List<Map<int, Widget>> list = [];
+  // List<Map<int, Widget>> list = [];
+  List<Widget> list = [];
   int index = 0;
 
   @override
@@ -45,42 +46,52 @@ class _MyAppState extends State<MyApp> {
                 onPressed: (() {
                   setState(() {
                     if (controller.text != '') {
-                      // list.add(ListTile(
-                      //   leading: IconButton(
-                      //     onPressed: () {},
-                      //     icon: Icon(Icons.add_box_rounded),
-                      //   ),
-                      //   trailing: IconButton(
-                      //       onPressed: () {
-
+                      list.add(ListTile(
+                        leading: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.add_box_rounded),
+                        ),
+                        trailing: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                list.removeAt(0);
+                              });
+                            },
+                            icon: Icon(
+                              Icons.delete,
+                              color: Color(0xFFF57C73),
+                            )),
+                        title: Text(controller.text),
+                        subtitle: Text('person\'s name'),
+                      ));
+                      controller.text='';
+                      //     index += 1;
+                      //     list.add(
+                      //       {
+                      //         index: ListTile(
+                      //           title: Text(controller.text),
+                      //           trailing: IconButton(onPressed: (){
+                      //             list.removeWhere((element) => element.keys.toList()[0] == index);
+                      //           }, icon: const Icon(Icons.delete),),
+                      //         ),
                       //       },
-                      //       icon: Icon(Icons.delete)),
-                      //   title: Text(controller.text),
-                      //   subtitle: Text('person\'s name'),
-                      // ));
-                      index += 1;
-                      list.add(
-                        {
-                          index: ListTile(
-                            title: Text(controller.text),
-                            trailing: IconButton(onPressed: (){
-                              list.removeWhere((element) => element.keys.toList()[0] == index);
-                            }, icon: const Icon(Icons.delete),),
-                          ),
-                        },
-                      );
+                      //     );
                     }
                   });
                 }),
-                icon: Icon(Icons.add_box_rounded)),
+                icon: Icon(
+                  Icons.add_box_rounded,
+                  color: Colors.blue,
+                )),
             title: TextField(
                 controller: controller, decoration: InputDecoration()),
             subtitle: Text('Enter name'),
-            trailing: IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
+            trailing: IconButton(
+                onPressed: () {}, icon: Icon(Icons.download_for_offline)),
           ),
-          // Column(
-          //   chil,
-          // )
+          Column(
+            children: list,
+          )
         ],
       ),
     );
