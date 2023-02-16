@@ -58,6 +58,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+
+
   List<Widget> lstTile() {
     List<Widget> lst = [];
     for (int i = 0; i < list.length; i++) {
@@ -78,10 +80,7 @@ class _MyAppState extends State<MyApp> {
               color: Color(0xFFEB5E54),
             ),
           ),
-          title: TextField(  
-            
-            decoration: InputDecoration(suffix:Text(list[i]) ,border: OutlineInputBorder()),
-          ),
+          title: Text(list[i]),
           subtitle: Text('$i person\'s name'),
         ),
       );

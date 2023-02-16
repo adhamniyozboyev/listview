@@ -49,7 +49,7 @@ class _MyWidgetState extends State<MyWidget> {
                 },
                 icon: Icon(
                   Icons.delete_forever,
-                  color: Color.fromARGB(255, 192, 94, 87),
+                  color: Color.fromARGB(255, 191, 94, 87),
                 ))),
         Column(
           children: lsttile(),
@@ -77,7 +77,7 @@ class _MyWidgetState extends State<MyWidget> {
         ),
         title: Row(
           children: [
-            // Container(color: Colors.red,height: 10,width: 10,),
+            
             Text(list[i]),
           ],
         ),
