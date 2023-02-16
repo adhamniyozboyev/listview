@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,7 +48,7 @@ class _MyAppState extends State<MyApp> {
                   });
                 },
                 icon: const Icon(
-                  Icons.download_for_offline,
+                  Icons.delete_forever,
                   color: Colors.green,
                 )),
           ),
@@ -58,6 +57,8 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+
+
 
   List<Widget> lstTile() {
     List<Widget> lst = [];
