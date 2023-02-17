@@ -49,7 +49,7 @@ class _MyWidgetState extends State<MyWidget> {
                 },
                 icon: Icon(
                   Icons.delete_forever,
-                  color: Color.fromARGB(255, 191, 94, 87),
+                  color: Color.fromARGB(256, 191, 94, 87),
                 ))),
         Column(
           children: lsttile(),
